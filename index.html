@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jake DeMuesy — CS Portfolio</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #111;
+    background: #fff;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  h1 { font-size: 2rem; font-weight: normal; margin-bottom: 0.25rem; }
+  h2 { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; font-family: system-ui, sans-serif; font-weight: 600; color: #111; margin: 3rem 0 1rem; border-bottom: 1px solid #111; padding-bottom: 0.4rem; }
+  h3 { font-size: 1rem; font-weight: bold; font-family: system-ui, sans-serif; margin-bottom: 0.3rem; }
+
+  p { color: #333; margin-bottom: 0.9rem; }
+  p:last-child { margin-bottom: 0; }
+
+  .subtitle { font-family: system-ui, sans-serif; font-size: 0.9rem; color: #555; margin-bottom: 2.5rem; }
+
+  hr { border: none; border-top: 1px solid #ddd; margin: 0.75rem 0 1.5rem; }
+
+  .artifact { margin-bottom: 2.5rem; }
+  .artifact-label { font-family: system-ui, sans-serif; font-size: 0.75rem; color: #666; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.2rem; }
+
+  .skills { font-family: system-ui, sans-serif; font-size: 0.8rem; color: #555; margin: 0.4rem 0 0.6rem; }
+
+  a { color: #111; }
+  a:hover { color: #555; }
+
+  footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid #ddd; font-family: system-ui, sans-serif; font-size: 0.8rem; color: #888; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem; }
+  footer a { color: #888; }
+</style>
+</head>
+<body>
+
+<h1>Jake DeMuesy</h1>
+<p class="subtitle">CS 499 Capstone ePortfolio &nbsp;&middot;&nbsp; SNHU 2026 &nbsp;&middot;&nbsp; Software Engineer II &nbsp;&middot;&nbsp; Denver, CO</p>
+
+<h2>Professional Self-Assessment</h2>
+
+<p>I entered the software engineering industry in 2016 as a self-taught developer and worked my way to Software Engineer II at Fortune 500 and Fortune 100 companies. Completing the CS program at SNHU while working full-time has been the practical way to close the degree gap I always knew I'd have to address. This portfolio is the result of that overlap -- academic work informed by a decade of production systems experience.</p>
+
+<p>The area the program pushed me most on is communicating with stakeholders. Writing enhancement narratives meant explaining not just what I built but why a specific architectural decision mattered. The code review assignment required walking through weaknesses in my own code out loud, which is a different skill than writing about them. On the team collaboration side, SNHU's discussion board structure forces real engagement with how other students approach the same problems -- pretty close to how code review and design discussion works in distributed teams.</p>
+
+<p>The deep Q-learning work in CS 370 made the difference between "an algorithm that works" and "one designed with the right trade-offs" concrete for me. The CS 465 MEAN stack course pushed me outside my .NET comfort zone. The CS 330 graphics work was furthest from anything I'd done professionally, but the patterns applied to the capstone (composite scene graph, SRP, dependency injection) are the same ones I'd use in any production codebase. Security got the most direct overlap with my professional experience -- I've worked where access control is a compliance requirement, not optional.</p>
+
+<p>What I'm targeting next is finance or aerospace. There are strong senior .NET opportunities in both spaces, and I've noticed aerospace shops in the Denver area actively looking for .NET talent. The degree makes both paths more realistic.</p>
+
+<h2>Artifacts</h2>
+
+<div class="artifact">
+  <p class="artifact-label">Enhancement One &mdash; Software Design &amp; Engineering</p>
+  <h3>OpenGL 3D Desk Scene &mdash; CS 330</h3>
+  <hr>
+  <p class="skills">C++ &nbsp;&middot;&nbsp; OpenGL &nbsp;&middot;&nbsp; GLFW / GLEW &nbsp;&middot;&nbsp; glm</p>
+  <p>Refactored a monolithic C++ OpenGL scene into a proper class hierarchy: composite scene graph with SceneNode and RenderableObject using virtual dispatch, a ShaderProgram abstraction with uniform location cache, a LightingConfig file parser for runtime light definitions, and a TextureManager extracted from SceneManager to enforce Single Responsibility. Comments were updated throughout to explain engineering reasoning rather than just describe what the code does.</p>
+  <p><a href="CategoryOne_Narrative_JakeDeMuesy.pdf">Read narrative &rarr;</a></p>
+</div>
+
+<div class="artifact">
+  <p class="artifact-label">Enhancement Two &mdash; Algorithms &amp; Data Structures</p>
+  <h3>Deep Q-Learning Pirate Agent &mdash; CS 370</h3>
+  <hr>
+  <p class="skills">Python &nbsp;&middot;&nbsp; TensorFlow / Keras &nbsp;&middot;&nbsp; NumPy &nbsp;&middot;&nbsp; Prioritized Experience Replay</p>
+  <p>Modularized a Jupyter notebook Q-training loop into discrete Python files: TreasureMaze.py as the environment state machine, GameExperience.py as the session orchestrator with prioritized experience replay, ParameterTuner.py for hyperparameter search with CSV logging, and a test suite using stub TensorFlow models. Also found and fixed a duplicate __init__ method that was silently breaking the entire PER system at runtime.</p>
+  <p><a href="CategoryTwo_Narrative_JakeDeMuesy.pdf">Read narrative &rarr;</a></p>
+</div>
+
+<div class="artifact">
+  <p class="artifact-label">Enhancement Three &mdash; Databases</p>
+  <h3>Animal Rescue Dashboard &mdash; CS 340</h3>
+  <hr>
+  <p class="skills">Python &nbsp;&middot;&nbsp; MongoDB &nbsp;&middot;&nbsp; PyMongo &nbsp;&middot;&nbsp; Dash / Plotly &nbsp;&middot;&nbsp; RBAC</p>
+  <p>Enhanced a Python/MongoDB/Dash dashboard with role-based access control enforced at both the application and database level, a compound index strategy matched to the rescue-type filter predicates (equality fields first, range field last), a server-side aggregation layer extracted into animal_analytics.py, a shared query builder so the table and chart can't drift apart, and a test suite that simulates MongoDB's aggregate() pipeline without a live connection.</p>
+  <p><a href="CategoryThree_Narrative_JakeDeMuesy.pdf">Read narrative &rarr;</a></p>
+</div>
+
+<footer>
+  <span>Jake DeMuesy &mdash; CS 499 &mdash; SNHU &mdash; 2026</span>
+  <span>
+    <a href="Professional_Self_Assessment.pdf">Self-Assessment PDF</a>
+    &nbsp;&middot;&nbsp;
+    <a href="https://github.com/jdem92" target="_blank" rel="noopener">GitHub</a>
+  </span>
+</footer>
+
+</body>
+</html>
